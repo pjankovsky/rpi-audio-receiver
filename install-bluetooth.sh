@@ -101,7 +101,7 @@ if [ "$action" = "add" ]; then
         aplay -q /usr/local/share/sounds/__custom/device-added.wav
     fi
     # disconnect wifi to prevent dropouts
-    #ifconfig wlan0 down &
+    ifconfig wlan0 down &
 fi
 
 if [ "$action" = "remove" ]; then
@@ -109,7 +109,7 @@ if [ "$action" = "remove" ]; then
         aplay -q /usr/local/share/sounds/__custom/device-removed.wav
     fi
     # reenable wifi
-    #ifconfig wlan0 up &
+    ifconfig wlan0 up &
     bluetoothctl discoverable on
 fi
 EOF
